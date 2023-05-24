@@ -1,0 +1,184 @@
+local ScreenGui = Instance.new("ScreenGui") 
+local Frame = Instance.new("Frame") 
+local Button = Instance.new("TextButton") 
+local text = Instance.new("TextLabel") 
+local Typ = Instance.new("TextBox")
+local Enter = Instance.new("TextButton")
+local Getkey = Instance.new("TextButton")
+
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui") 
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling 
+ScreenGui.ResetOnSpawn = false 
+ScreenGui.Name = "Ass"
+
+Frame.Parent = ScreenGui 
+Frame.Position = UDim2.new(0.3, 0,0, 500)
+Frame.Size = UDim2.new(0, 317, 0, 144) 
+Frame.BackgroundColor3 = Color3.fromRGB(63, 63, 63) 
+
+
+Instance.new("UICorner").Parent = Frame 
+Instance.new("UICorner").CornerRadius = UDim.new(0.1, 0) 
+
+
+Button.Parent = Frame 
+Button.Position = UDim2.new(0.88, 0,0.03, 0) 
+Button.Size = UDim2.new(0, 35, 0, 24) 
+Button.BackgroundColor3 = Color3.fromRGB(63, 63, 63) 
+Button.Text = "X" text.Parent = Frame 
+
+
+Enter.Parent = Frame
+Enter.Size = UDim2.new(0, 70,0, 30)
+Enter.Position = UDim2.new(0, 125,0, 75)
+Enter.BackgroundColor3 = Color3.new(0.4, 0.4, 0.4)
+Enter.Text = "Enter"
+Enter.MouseButton1Click:Connect(function()
+	if Typ.Text == "FLEXZSSCRIPT_THRJSIUE23874JHREUY" then
+		Frame.Visible = false
+		game:GetService("StarterGui"):SetCore("SendNotification", {Title = [[Don't Talk About ***]]; Text = "Use Flexsz Scripts"; Icon = "http://www.roblox.com/asset/?id=12454373029"; Duration = 5 })
+		wait(0.5)
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/jkdspovcks/buildaboatscript/main/orgnlscrpt",true))()
+
+	else
+
+		game:GetService("StarterGui"):SetCore("SendNotification", {Title = "Incorrect Key!"; Text = "Pls Get Key!"; Icon = "http://www.roblox.com/asset/?id=11192898195"; Duration = 5 })
+
+
+	end
+end)
+
+
+
+
+local entrui = Instance.new("UICorner")
+entrui.Parent = Enter
+entrui.CornerRadius = UDim.new(0,4)
+
+Getkey.Parent = Frame
+Getkey.Size = UDim2.new(0, 85,0, 30)
+Getkey.Position = UDim2.new(0, 117,0, 110)
+Getkey.BackgroundColor3 = Color3.new(0.4, 0.4, 0.4)
+Getkey.Text = "Get Key"
+Getkey.MouseButton1Click:Connect(function()
+	game:GetService("StarterGui"):SetCore("SendNotification", {Title = "Join Fight Club!"; Text = "Past it on search"; Icon = "http://www.roblox.com/asset/?id=10513370143"; Duration = 10 })
+	wait(0.7)
+	setclipboard("https://discord.gg/aZ27s67hrM")
+end)
+
+
+local gtkeyui = Instance.new("UICorner")
+gtkeyui.Parent = Getkey
+gtkeyui.CornerRadius = UDim.new(0,4)
+
+
+Typ.Parent = Frame
+Typ.BackgroundColor3 = Color3.new(0.4, 0.4, 0.4)
+Typ.Size = UDim2.new(0, 200,0, 30)
+Typ.Position = UDim2.new(0, 60,0, 40)
+Typ.Text = [["KEY HERE"]]
+Typ.BorderSizePixel = 0
+
+text.Position = UDim2.new(0.196, 0,0.100, 0) 
+text.Size = UDim2.new(0, 204,0, 27) 
+text.BackgroundColor3 = Color3.new(0.247059, 0.247059, 0.247059) 
+text.Text = "Flexsz" 
+text.BorderSizePixel = 0 
+text.Font = Enum.Font.Arial 
+text.FontFace.Weight = Enum.FontWeight.Bold 
+text.TextSize = 27 text.LineHeight = 1.2 
+text.TextColor3 = Color3.new(0.678431, 0.678431, 0.678431) 
+
+
+Instance.new("UICorner").Parent = Button 
+Instance.new("UICorner").CornerRadius = UDim.new(0.5, 0) 
+
+
+Uistroke = Instance.new("UIStroke") 
+Uistroke.Parent = Frame 
+
+
+UiGradient = Instance.new("UIGradient") 
+UiGradient.Parent = Uistroke
+UiGradient.Color = ColorSequence.new({ColorSequenceKeypoint.new(0, Color3.new(0.807843, 0.0823529, 0.0941176)), ColorSequenceKeypoint.new(1, Color3.new(0, 0, 0))}) 
+
+
+Uistroke.Color = Color3.new(1, 1, 1) 
+Uistroke.Thickness = 4.8 local RunService = game:GetService("RunService")
+
+
+RunService.RenderStepped:Connect(function()
+	UiGradient.Rotation += 2 end)
+
+Button.MouseButton1Click:Connect(function()
+	ScreenGui:Destroy() end) 
+
+Button.MouseButton1Click:Connect(function()
+	game:GetService("StarterGui"):SetCore("SendNotification", {Title = "CLOSED!"; Text = ""; Icon = "http://www.roblox.com/asset/?id=1249929622"; Duration = 4 }) 
+end)
+
+--drgble
+
+local function LLCZL_fake_script() -- Frame.Smooth GUI Dragging 
+	local script = Instance.new('LocalScript', Frame)
+
+	local UserInputService = game:GetService("UserInputService")
+	local runService = (game:GetService("RunService"));
+
+	local gui = script.Parent
+
+	local dragging
+	local dragInput
+	local dragStart
+	local startPos
+
+	function Lerp(a, b, m)
+		return a + (b - a) * m
+	end;
+
+	local lastMousePos
+	local lastGoalPos
+	local DRAG_SPEED = (8); -- // The speed of the UI darg.
+	function Update(dt)
+		if not (startPos) then return end;
+		if not (dragging) and (lastGoalPos) then
+			gui.Position = UDim2.new(startPos.X.Scale, Lerp(gui.Position.X.Offset, lastGoalPos.X.Offset, dt * DRAG_SPEED), startPos.Y.Scale, Lerp(gui.Position.Y.Offset, lastGoalPos.Y.Offset, dt * DRAG_SPEED))
+			return 
+		end;
+
+		local delta = (lastMousePos - UserInputService:GetMouseLocation())
+		local xGoal = (startPos.X.Offset - delta.X);
+		local yGoal = (startPos.Y.Offset - delta.Y);
+		lastGoalPos = UDim2.new(startPos.X.Scale, xGoal, startPos.Y.Scale, yGoal)
+		gui.Position = UDim2.new(startPos.X.Scale, Lerp(gui.Position.X.Offset, xGoal, dt * DRAG_SPEED), startPos.Y.Scale, Lerp(gui.Position.Y.Offset, yGoal, dt * DRAG_SPEED))
+	end;
+
+	gui.InputBegan:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+			dragging = true
+			dragStart = input.Position
+			startPos = gui.Position
+			lastMousePos = UserInputService:GetMouseLocation()
+
+			input.Changed:Connect(function()
+				if input.UserInputState == Enum.UserInputState.End then
+					dragging = false
+				end
+			end)
+		end
+	end)
+
+	gui.InputChanged:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+			dragInput = input
+		end
+	end)
+
+	runService.Heartbeat:Connect(Update)
+end
+coroutine.wrap(LLCZL_fake_script)()
+
+wait(2)
+local frem = game.Players.LocalPlayer.PlayerGui.Ass.Frame
+
+frem:TweenPosition(UDim2.new(0.3, 0,0, 117), Out, Circular, 1)
