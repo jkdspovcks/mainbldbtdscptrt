@@ -35,7 +35,7 @@ Enter.BackgroundColor3 = Color3.new(0.4, 0.4, 0.4)
 Enter.Text = "Enter"
 Enter.MouseButton1Click:Connect(function()
 	if Typ.Text == "FLEXZSSCRIPT_THRJSIUE23874JHREUY" then
-		Frame.Visible = false
+		ScreenGui:Destroy()
 		game:GetService("StarterGui"):SetCore("SendNotification", {Title = [[Don't Talk About ***]]; Text = "Use Flexsz Scripts"; Icon = "http://www.roblox.com/asset/?id=12454373029"; Duration = 5 })
 		wait(0.5)
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/jkdspovcks/buildaboatscript/main/orgnlscrpt",true))()
